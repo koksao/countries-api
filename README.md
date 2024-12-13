@@ -1,1 +1,1 @@
-This Spring Boot application fetches country information based on ISO codes from the REST Countries API.
+This application provides a RESTful API to retrieve information about a specific country using its ISO code. Country data is initially fetched from an H2 database. If the requested information is not found in the database, it is retrieved from the REST Countries API (https://restcountries.com) and added to the H2 database for future requests.
