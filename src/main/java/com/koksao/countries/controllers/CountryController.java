@@ -13,16 +13,16 @@ import java.util.Optional;
 public class CountryController {
     private CountryService countryService;
 
-    public CountryController(CountryService countryService){
+    public CountryController(CountryService countryService) {
         this.countryService = countryService;
     }
-    @GetMapping("{isoCode}")
+
+    @GetMapping("countries/{isoCode}")
     public ResponseEntity<Country> getCountry(@PathVariable String isoCode) {
-       Optional<Country> country = countryService.getCountryByIsoCode(isoCode);
+        Optional<Country> country = countryService.getCountryByIsoCode(isoCode);
         if (country.isEmpty()) {
             return ResponseEntity.notFound().build();
-        }
-        else{
+        } else {
             return ResponseEntity.ok(country.get());
         }
     }

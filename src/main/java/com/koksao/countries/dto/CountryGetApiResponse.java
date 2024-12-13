@@ -9,7 +9,7 @@ import java.util.Map;
 @Data
 public class CountryGetApiResponse {
 
-    private Map<String,Object> name;
+    private Map<String, Object> name;
 
     private Map<String, Object> currencies;
 
@@ -19,7 +19,7 @@ public class CountryGetApiResponse {
 
     private String subregion;
 
-    private Map<String,String> languages;
+    private Map<String, String> languages;
 
     private Long population;
 
@@ -42,11 +42,11 @@ public class CountryGetApiResponse {
         return new ArrayList<>(languages.values());
     }
 
-    public String getCommonName(){
+    public String getCommonName() {
         return (String) name.get("common");
     }
 
-    public String getOfficialName(){
+    public String getOfficialName() {
         return (String) name.get("official");
     }
 
